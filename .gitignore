@@ -1,0 +1,15 @@
+# личные настройки и ключи
+config.toml
+client_secret*.json
+token.json
+cookies.txt
+links.txt
+
+# скачанные и готовые видео
+data/
+
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/

@@ -1,0 +1,5 @@
+yt-dlp[default,curl-cffi]>=2026.8.19
+anthropic>=1.14.0
+google-api-python-client>=2.201.0
+google-auth-oauthlib>=1.5.0
+tzdata; sys_platform == "win32"

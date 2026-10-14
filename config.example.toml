@@ -1,0 +1,58 @@
+# Настройки помощника. Скопируйте в config.toml (или выполните: python -m tt2yt init).
+
+# Куда складывать скачанные и готовые видео.
+data_dir = "data"
+
+[tiktok]
+# Ваш ник в TikTok без @.
+username = ""
+# Сколько последних видео профиля проверять при каждом запуске.
+max_videos = 30
+# Если TikTok не отдаёт список видео — укажите браузер, в котором вы залогинены в TikTok:
+# "firefox", "chrome", "edge", "opera", "brave" (для Chrome/Edge браузер лучше закрыть на время запуска)
+cookies_from_browser = ""
+# Или файл cookies.txt в формате Netscape (расширение «Get cookies.txt LOCALLY»).
+cookies_file = ""
+
+[video]
+# Размер кадра для Shorts.
+width = 1080
+height = 1920
+# Качество: меньше = лучше и тяжелее файл (18–23 — разумно).
+crf = 20
+# Выравнивать громкость под рекомендации YouTube.
+normalize_audio = true
+
+[meta]
+# Писать название и описание с помощью Claude (нужна переменная окружения ANTHROPIC_API_KEY).
+# Без ключа описания делаются по подписи из TikTok.
+use_ai = true
+model = "claude-opus-5-5"
+# Насколько тщательно думать: low, medium, high.
+effort = "medium"
+# Сколько кадров из видео показывать ИИ.
+frames = 4
+# О чём канал — ИИ будет писать в этом духе.
+channel_topic = "теории, загадки, тайны и необъяснимые истории"
+# Добавляются к тегам каждого видео.
+default_tags = ["теории", "загадки", "тайны", "необъяснимое"]
+# Добавляется в конец каждого описания.
+footer = "Подписывайся, чтобы не пропустить новые теории!"
+
+[youtube]
+# OAuth-ключ из Google Cloud Console (см. README).
+client_secrets = "client_secret.json"
+token_file = "token.json"
+# private, unlisted или public.
+privacy = "private"
+# 24 — Развлечения, 27 — Образование, 22 — Люди и блоги.
+category_id = "24"
+made_for_kids = false
+# Публиковать по расписанию (видео загружается скрытым и само выходит в указанное время).
+schedule = false
+times = ["12:00", "18:00"]
+timezone = "Europe/Moscow"
+# Лимит API — примерно 6 загрузок в сутки на проект Google Cloud.
+max_uploads_per_run = 5
+# Порядок загрузки: "oldest" — как выходили в TikTok, "newest" — сначала свежие.
+order = "oldest"
