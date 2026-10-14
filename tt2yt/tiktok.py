@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import math
 from pathlib import Path
 
 import yt_dlp
@@ -49,12 +50,8 @@ def _base_opts(cfg: Config) -> dict:
     return opts
 
 
-def list_profile(cfg: Config) -> list[dict]:
-    """Последние видео профиля: [{"id", "url"}], от новых к старым."""
-    username = cfg.tiktok.username
-    if not username:
-        raise TikTokError("В config.toml не указан [tiktok] username")
-
+def list_profile(cfg: Config, username: str) -> list[dict]:
+    """Последние видео аккаунта со статистикой, от новых к старым."""
     opts = {
         **_base_opts(cfg),
         "extract_flat": "in_playlist",
@@ -73,9 +70,23 @@ def list_profile(cfg: Config) -> list[dict]:
         {
             "id": str(e["id"]),
             "url": e.get("url") or f"https://www.tiktok.com/@{username}/video/{e['id']}",
+            "account": username,
+            "caption": e.get("description") or e.get("title") or "",
+            "views": e.get("view_count"),
+            "likes": e.get("like_count"),
+            "upload_date": e.get("upload_date") or "",
         }
         for e in entries
     ]
+
+
+def select_popular(entries: list[dict], min_views: int = 0, top_share: float = 1.0) -> list[dict]:
+    """Только то, что набирает: не меньше min_views просмотров и в доле top_share
+    лучших видео аккаунта (0.3 — лучшие 30%)."""
+    ranked = sorted(entries, key=lambda e: e.get("views") or 0, reverse=True)
+    keep = max(1, math.ceil(len(ranked) * top_share)) if ranked else 0
+    top_ids = {e["id"] for e in ranked[:keep]}
+    return [e for e in entries if e["id"] in top_ids and (e.get("views") or 0) >= min_views]
 
 
 def download(url: str, dest: Path, cfg: Config) -> dict:

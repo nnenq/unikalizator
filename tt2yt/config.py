@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 import tomllib
 from dataclasses import dataclass, field, fields
 from pathlib import Path
@@ -13,10 +14,22 @@ class ConfigError(Exception):
 
 @dataclass
 class TikTokConfig:
-    username: str = ""
+    accounts: list[str] = field(default_factory=list)
+    username: str = ""  # одиночный аккаунт — то же, что accounts = ["..."]
     max_videos: int = 30
+    min_views: int = 0
+    top_share: float = 1.0
     cookies_file: str = ""
     cookies_from_browser: str = ""
+
+
+def normalize_account(value: str) -> str:
+    """'https://www.tiktok.com/@ella.stewart8?_r=1' или '@ella.stewart8' -> 'ella.stewart8'."""
+    value = value.strip()
+    m = re.search(r"@([\w.\-]+)", value)
+    if m:
+        return m.group(1)
+    return value.split("?")[0].strip("/ ")
 
 
 @dataclass
@@ -103,7 +116,12 @@ def load_config(path: Path) -> Config:
     if raw:
         raise ConfigError(f"Неизвестные разделы в {path}: {', '.join(sorted(raw))}")
 
-    cfg.tiktok.username = cfg.tiktok.username.strip().lstrip("@")
+    t = cfg.tiktok
+    accounts = list(t.accounts) + ([t.username] if t.username else [])
+    t.accounts = list(dict.fromkeys(a for a in map(normalize_account, accounts) if a))
+    t.username = ""
+    if not 0 < t.top_share <= 1:
+        raise ConfigError("[tiktok] top_share должно быть от 0 до 1 (1 — все видео)")
     if cfg.youtube.privacy not in ("private", "unlisted", "public"):
         raise ConfigError("[youtube] privacy должно быть private, unlisted или public")
     if cfg.youtube.order not in ("oldest", "newest"):

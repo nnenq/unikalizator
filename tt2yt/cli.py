@@ -12,7 +12,7 @@ from pathlib import Path
 
 from . import meta as meta_mod
 from . import state as st
-from .config import Config, ConfigError, load_config
+from .config import Config, ConfigError, load_config, normalize_account
 from .state import State
 from .video import VideoError
 
@@ -44,16 +44,17 @@ def cmd_init(args) -> int:
     text = EXAMPLE_CONFIG.read_text(encoding="utf-8")
     username = args.username
     if username is None and sys.stdin.isatty():
-        username = input("Ваш ник в TikTok (без @): ").strip()
+        username = input("Ваши аккаунты TikTok (ники или ссылки через пробел): ").strip()
     if username:
-        text = text.replace('username = ""', f'username = "{username.lstrip("@")}"', 1)
+        accounts = ", ".join(f'"{normalize_account(a)}"' for a in username.split())
+        text = text.replace("accounts = []", f"accounts = [{accounts}]", 1)
     target.write_text(text, encoding="utf-8")
     print(f"Создан {target}. Откройте его и проверьте настройки.")
     return 0
 
 
 def cmd_fetch(cfg: Config, state: State, args) -> int:
-    from .tiktok import TikTokError, download, list_profile
+    from .tiktok import TikTokError, download, list_profile, select_popular
 
     urls: list[str] = list(args.url or [])
     if args.links:
@@ -70,16 +71,28 @@ def cmd_fetch(cfg: Config, state: State, args) -> int:
             if key not in state:
                 state.update(key, url=url, source_kind="tiktok")
     else:
-        print(f"Проверяю профиль TikTok @{cfg.tiktok.username}…")
-        try:
-            entries = list_profile(cfg)
-        except TikTokError as e:
-            print(f"Не удалось получить список видео: {e}")
+        if not cfg.tiktok.accounts:
+            print("В config.toml не указаны аккаунты TikTok ([tiktok] accounts)")
             return 1
-        new = [e for e in entries if e["id"] not in state]
-        for e in new:
-            state.update(e["id"], url=e["url"], source_kind="tiktok")
-        print(f"В профиле {len(entries)} последних видео, новых: {len(new)}")
+        ok = False
+        for account in cfg.tiktok.accounts:
+            print(f"Проверяю @{account}…")
+            try:
+                entries = list_profile(cfg, account)
+            except TikTokError as e:
+                print(f"  Не удалось получить список видео: {e}")
+                continue
+            ok = True
+            popular = select_popular(entries, cfg.tiktok.min_views, cfg.tiktok.top_share)
+            new = [e for e in popular if e["id"] not in state]
+            for e in new:
+                state.update(e["id"], source_kind="tiktok", **e)
+            print(
+                f"  последних видео: {len(entries)}, набирают просмотры: {len(popular)}, "
+                f"новых: {len(new)}"
+            )
+        if not ok:
+            return 1
 
     pending = state.with_status(st.NEW)[: args.limit]
     for video in pending:
@@ -277,7 +290,7 @@ def cmd_upload(cfg: Config, state: State, args) -> int:
 
 
 def cmd_run(cfg: Config, state: State, args) -> int:
-    if cfg.tiktok.username:
+    if cfg.tiktok.accounts:
         cmd_fetch(cfg, state, argparse.Namespace(url=None, links=None, limit=None))
     cmd_prepare(cfg, state, argparse.Namespace(limit=args.limit))
     cmd_describe(cfg, state, argparse.Namespace(limit=args.limit, redo=None, no_ai=args.no_ai))
@@ -291,6 +304,41 @@ def cmd_run(cfg: Config, state: State, args) -> int:
         return cmd_status(cfg, state, args)
     cmd_upload(cfg, state, argparse.Namespace(limit=args.limit, dry_run=False))
     return cmd_status(cfg, state, args)
+
+
+def cmd_research(cfg: Config, state: State, args) -> int:
+    from . import research
+    from .tiktok import TikTokError, list_profile
+
+    accounts: dict[str, tuple[list[dict] | None, str | None]] = {}
+    all_entries: list[dict] = []
+    for account in cfg.tiktok.accounts:
+        print(f"Смотрю @{account}…")
+        try:
+            entries = list_profile(cfg, account)
+        except TikTokError as e:
+            accounts[account] = (None, str(e).splitlines()[0])
+            print(f"  ✗ {str(e).splitlines()[0]}")
+            continue
+        accounts[account] = (entries, None)
+        all_entries += entries
+        print(f"  ✓ {len(entries)} видео")
+
+    queries = args.queries or [q.strip() for q in cfg.meta.channel_topic.split(",") if q.strip()]
+    results: list[dict] = []
+    for query in queries:
+        print(f"Ищу на YouTube: «{query}»…")
+        try:
+            results += research.youtube_search(query, args.count)
+        except research.SearchError as e:
+            print(f"  ✗ {e}")
+
+    report = research.build_report(accounts, queries, results, research.top_hashtags(all_entries, 10))
+    out = cfg.data_dir / "research.md"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(report, encoding="utf-8")
+    print(f"\n{report}\nОтчёт сохранён в {out}")
+    return 0
 
 
 def cmd_status(cfg: Config, state: State, args) -> int:
@@ -360,7 +408,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub = parser.add_subparsers(dest="command", required=True, metavar="команда")
 
     p = sub.add_parser("init", help="создать config.toml")
-    p.add_argument("--username", help="ник в TikTok")
+    p.add_argument("--username", help="ники или ссылки на аккаунты TikTok через пробел")
 
     p = sub.add_parser("run", help="всё сразу: скачать → подготовить → описать → загрузить")
     p.add_argument("--limit", type=int, help="не больше N видео на каждом шаге")
@@ -388,6 +436,10 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--limit", type=int)
     p.add_argument("--dry-run", action="store_true", help="только показать, что будет загружено")
 
+    p = sub.add_parser("research", help="что набирает в ваших TikTok и кто конкуренты на YouTube")
+    p.add_argument("queries", nargs="*", help="поисковые запросы (по умолчанию — channel_topic из config.toml)")
+    p.add_argument("--count", type=int, default=20, help="сколько роликов брать на запрос")
+
     p = sub.add_parser("status", help="список видео и их состояние")
     p.add_argument("--all", action="store_true", help="показать все, а не последние 15")
 
@@ -406,6 +458,7 @@ COMMANDS = {
     "prepare": cmd_prepare,
     "describe": cmd_describe,
     "upload": cmd_upload,
+    "research": cmd_research,
     "status": cmd_status,
     "skip": cmd_skip,
     "retry": cmd_retry,
