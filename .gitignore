@@ -1,4 +1,6 @@
 # личные настройки и ключи
+.env
+.env.*
 config.toml
 client_secret*.json
 token.json
