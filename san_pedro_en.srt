@@ -1,0 +1,1255 @@
+1
+00:00:00,950 --> 00:00:04,464
+In most prisons, when you arrive, you are given a cell. Here,
+
+2
+00:00:04,514 --> 00:00:07,151
+the first question is how much money you have.
+
+3
+00:00:09,951 --> 00:00:14,676
+This is San Pedro prison, in La Paz, Bolivia. From the outside,
+
+4
+00:00:14,726 --> 00:00:19,376
+it looks like an old colonial building on a quiet city square.
+
+5
+00:00:19,426 --> 00:00:22,786
+Pigeons. Benches. Old men reading newspapers.
+
+6
+00:00:24,586 --> 00:00:28,127
+Behind its walls, there is no state housing office.
+
+7
+00:00:28,177 --> 00:00:31,647
+No cell assigned by the guards. If you want a bed,
+
+8
+00:00:31,697 --> 00:00:35,308
+you buy one. Or you rent one. From another prisoner.
+
+9
+00:00:38,108 --> 00:00:44,360
+Inside, there are rich neighborhoods and poor ones. Estate agents. Title deeds.
+
+10
+00:00:44,410 --> 00:00:49,066
+Elections. Restaurants, shops, football leagues. For years,
+
+11
+00:00:49,116 --> 00:00:53,294
+there were even children living inside. And tourists,
+
+12
+00:00:53,344 --> 00:00:54,889
+who paid to come in.
+
+13
+00:00:56,689 --> 00:01:01,038
+The guards watch the walls. The prisoners run almost everything else.
+
+14
+00:01:01,088 --> 00:01:03,205
+And in February twenty twenty six,
+
+15
+00:01:03,255 --> 00:01:09,261
+Bolivia's prison authorities had to remind everyone of something that should have been obvious.
+
+16
+00:01:09,311 --> 00:01:10,982
+The cells are not for sale.
+
+17
+00:01:12,782 --> 00:01:14,678
+This is the story of San Pedro.
+
+18
+00:01:14,728 --> 00:01:16,812
+The prison with a property market.
+
+19
+00:01:20,562 --> 00:01:22,781
+Chapter 1. The panopticon.
+
+20
+00:01:29,131 --> 00:01:31,792
+La Paz sits in a deep valley in the Andes,
+
+21
+00:01:31,842 --> 00:01:35,794
+at more than three and a half thousand meters above sea level.
+
+22
+00:01:35,844 --> 00:01:39,021
+It is the highest seat of government in the world.
+
+23
+00:01:39,071 --> 00:01:42,571
+Above the city rises the snow covered peak of Illimani.
+
+24
+00:01:44,371 --> 00:01:45,906
+In the eighteen eighties,
+
+25
+00:01:45,956 --> 00:01:49,393
+Bolivia decided to build a modern national prison here.
+
+26
+00:01:49,443 --> 00:01:51,485
+According to Bolivian historians,
+
+27
+00:01:51,535 --> 00:01:57,381
+construction of what was called the National Panopticon was approved in eighteen eighty five,
+
+28
+00:01:57,431 --> 00:02:00,994
+with the engineer Eduardo Idiaquez in charge of the work.
+
+29
+00:02:01,044 --> 00:02:04,545
+Other sources date the building to eighteen ninety five.
+
+30
+00:02:06,345 --> 00:02:10,027
+The panopticon was a fashionable idea at the time.
+
+31
+00:02:10,077 --> 00:02:14,730
+A prison designed so that a few guards, from one central point,
+
+32
+00:02:14,780 --> 00:02:19,807
+could watch every prisoner at all times. Order. Visibility. Control.
+
+33
+00:02:21,607 --> 00:02:24,852
+The building went up in the San Pedro neighborhood,
+
+34
+00:02:24,902 --> 00:02:28,406
+facing a city square. And that square, Plaza San Pedro,
+
+35
+00:02:28,456 --> 00:02:29,376
+is still there.
+
+36
+00:02:29,426 --> 00:02:32,090
+The prison is not on the edge of the city.
+
+37
+00:02:32,140 --> 00:02:34,158
+It is right in the middle of it.
+
+38
+00:02:35,958 --> 00:02:39,568
+San Pedro was built for a few hundred prisoners.
+
+39
+00:02:39,618 --> 00:02:44,679
+Sources differ on the exact number. Some say two hundred and fifty.
+
+40
+00:02:44,729 --> 00:02:50,551
+Others, six hundred. Over the next century, Bolivia's prison population grew.
+
+41
+00:02:50,601 --> 00:02:52,153
+The building did not.
+
+42
+00:02:53,953 --> 00:03:00,041
+Reported numbers over the years range from around fifteen hundred to nearly three thousand men,
+
+43
+00:03:00,091 --> 00:03:03,594
+held inside a building designed for a fraction of that.
+
+44
+00:03:03,644 --> 00:03:07,794
+And somewhere along the way, the idea of total control collapsed.
+
+45
+00:03:09,594 --> 00:03:12,662
+Today, according to every account of the prison,
+
+46
+00:03:12,712 --> 00:03:16,949
+the police guard the perimeter. They watch the gate and the walls.
+
+47
+00:03:16,999 --> 00:03:21,106
+Inside, they rarely go. The panopticon, built to see everything,
+
+48
+00:03:21,156 --> 00:03:23,120
+ended up seeing almost nothing.
+
+49
+00:03:26,570 --> 00:03:29,230
+Chapter 2. Welcome to San Pedro.
+
+50
+00:03:35,580 --> 00:03:38,687
+Imagine you have just been arrested in La Paz.
+
+51
+00:03:38,737 --> 00:03:41,432
+You have not been convicted of anything.
+
+52
+00:03:41,482 --> 00:03:45,824
+Like most people in Bolivian prisons, you are waiting for trial.
+
+53
+00:03:45,874 --> 00:03:48,775
+That wait can last months. Sometimes years.
+
+54
+00:03:50,575 --> 00:03:52,054
+As of twenty twenty six,
+
+55
+00:03:52,104 --> 00:03:56,578
+more than half of Bolivia's prisoners were still waiting for a verdict.
+
+56
+00:03:56,628 --> 00:04:00,019
+Older reports put the number at San Pedro even higher,
+
+57
+00:04:00,069 --> 00:04:01,421
+around three quarters.
+
+58
+00:04:03,221 --> 00:04:04,699
+You walk through the gate.
+
+59
+00:04:04,749 --> 00:04:08,228
+And according to accounts by former inmates and journalists,
+
+60
+00:04:08,278 --> 00:04:10,639
+there is usually someone waiting for you.
+
+61
+00:04:10,689 --> 00:04:13,755
+A member of the reception committee. Other prisoners,
+
+62
+00:04:13,805 --> 00:04:15,284
+who meet the new arrivals.
+
+63
+00:04:17,084 --> 00:04:20,033
+Their first job is to explain how things work.
+
+64
+00:04:20,083 --> 00:04:24,272
+And the most important thing is this. You need somewhere to live.
+
+65
+00:04:24,322 --> 00:04:26,489
+The state will not give it to you.
+
+66
+00:04:28,289 --> 00:04:32,797
+If you have no money, you sleep wherever you can. In corridors.
+
+67
+00:04:32,847 --> 00:04:35,329
+In crowded rooms. In some sections,
+
+68
+00:04:35,379 --> 00:04:40,393
+poor prisoners can stay in a small space if they work for the section,
+
+69
+00:04:40,443 --> 00:04:42,419
+cleaning or running errands.
+
+70
+00:04:44,219 --> 00:04:46,258
+If you have money, you go shopping.
+
+71
+00:04:50,008 --> 00:04:52,460
+Chapter 3. The property market.
+
+72
+00:04:58,810 --> 00:05:01,166
+San Pedro has a real estate market.
+
+73
+00:05:01,216 --> 00:05:06,184
+Cells are bought and sold between prisoners. When a prisoner is released,
+
+74
+00:05:06,234 --> 00:05:08,522
+transferred, or simply needs cash,
+
+75
+00:05:08,572 --> 00:05:11,065
+he can sell his cell to someone else.
+
+76
+00:05:12,865 --> 00:05:15,647
+According to researchers and former inmates,
+
+77
+00:05:15,697 --> 00:05:19,701
+prices have ranged from about twenty dollars for a basic space,
+
+78
+00:05:19,751 --> 00:05:22,982
+to around five thousand dollars for the best cells.
+
+79
+00:05:23,032 --> 00:05:24,334
+In twenty twenty six,
+
+80
+00:05:24,384 --> 00:05:29,739
+Bolivian journalists reported prices between three hundred and ten thousand dollars,
+
+81
+00:05:29,789 --> 00:05:32,441
+or even more, in the most desirable areas.
+
+82
+00:05:34,241 --> 00:05:38,579
+There are freelance estate agents. Prisoners who find buyers and sellers,
+
+83
+00:05:38,629 --> 00:05:43,027
+and take a commission. You can also buy through your section's leadership,
+
+84
+00:05:43,077 --> 00:05:47,054
+but according to one study, that can cost about fifty percent more.
+
+85
+00:05:48,854 --> 00:05:51,589
+And there is paperwork. When a cell is sold,
+
+86
+00:05:51,639 --> 00:05:55,829
+the buyer gets a title. A written document listing the room number,
+
+87
+00:05:55,879 --> 00:05:59,817
+its location, a description, the previous owner, and the price.
+
+88
+00:05:59,867 --> 00:06:02,412
+The sale is signed in front of a witness,
+
+89
+00:06:02,462 --> 00:06:07,222
+checked by the section leader, and stamped with the section's official seal.
+
+90
+00:06:09,022 --> 00:06:10,502
+None of this is legal.
+
+91
+00:06:10,552 --> 00:06:14,954
+Bolivian law does not recognize any of it. But inside San Pedro,
+
+92
+00:06:15,004 --> 00:06:17,945
+for decades, it worked like the real thing.
+
+93
+00:06:20,945 --> 00:06:22,208
+There are also fees.
+
+94
+00:06:22,258 --> 00:06:29,363
+A buyer reportedly pays a non refundable charge of twenty to twenty five percent of the price to his section.
+
+95
+00:06:29,413 --> 00:06:33,236
+The money goes to maintenance, cleaning, and social events.
+
+96
+00:06:35,036 --> 00:06:38,113
+If you cannot afford to buy, you can rent.
+
+97
+00:06:38,163 --> 00:06:42,655
+Some prisoners own several cells and rent them out. They are,
+
+98
+00:06:42,705 --> 00:06:45,485
+in effect, landlords. Inside a prison.
+
+99
+00:06:47,285 --> 00:06:50,255
+In theory, a cell is also an investment.
+
+100
+00:06:50,305 --> 00:06:56,370
+A prisoner who buys a good cell and improves it can sell it again when he leaves.
+
+101
+00:06:56,420 --> 00:06:59,541
+The market, not the state, sets the price.
+
+102
+00:07:01,341 --> 00:07:04,344
+And like any property market, location matters.
+
+103
+00:07:06,594 --> 00:07:09,022
+Chapter 4. Rich and poor.
+
+104
+00:07:15,372 --> 00:07:21,273
+San Pedro is divided into eight sections. Their names include Posta, Pinos,
+
+105
+00:07:21,323 --> 00:07:25,875
+Alamos, San Martin, Prefectura, Palmar, Guanay and Cancha.
+
+106
+00:07:25,925 --> 00:07:30,716
+Each one is like a separate neighborhood, with its own rules,
+
+107
+00:07:30,766 --> 00:07:33,572
+its own leaders, and its own prices.
+
+108
+00:07:35,372 --> 00:07:38,442
+At the top is La Posta. The wealthiest section.
+
+109
+00:07:38,492 --> 00:07:44,151
+Cells there have been described with private bathrooms, kitchens and cable television.
+
+110
+00:07:44,201 --> 00:07:49,660
+Some of the most expensive cells were reportedly extended over more than one floor.
+
+111
+00:07:49,710 --> 00:07:52,050
+One account even mentions a hot tub.
+
+112
+00:07:53,850 --> 00:07:58,211
+The richer sections work almost like gated communities. In the evening,
+
+113
+00:07:58,261 --> 00:08:03,244
+around nine o'clock, their representatives lock the doors and keep outsiders out.
+
+114
+00:08:05,044 --> 00:08:09,540
+At the bottom are the poorest sections. There, the rooms are crowded.
+
+115
+00:08:09,590 --> 00:08:13,889
+Five men in a single room is common. Drug addiction is widespread.
+
+116
+00:08:13,939 --> 00:08:18,435
+And according to reports, that is where most of the stabbings happen,
+
+117
+00:08:18,485 --> 00:08:19,028
+at night.
+
+118
+00:08:20,828 --> 00:08:24,592
+The difference between the two is not the crime a man committed.
+
+119
+00:08:24,642 --> 00:08:27,035
+It is not his sentence. It is his wallet.
+
+120
+00:08:30,335 --> 00:08:33,948
+A drug trafficker with savings can live in relative comfort.
+
+121
+00:08:33,998 --> 00:08:39,931
+A poor man waiting for trial on a minor charge can end up sleeping on the floor of a crowded room,
+
+122
+00:08:39,981 --> 00:08:42,434
+in the most dangerous part of the prison.
+
+123
+00:08:44,234 --> 00:08:48,298
+There is even a place inside the walls that inmates call a hotel,
+
+124
+00:08:48,348 --> 00:08:51,462
+where visitors could stay the night. In San Pedro,
+
+125
+00:08:51,512 --> 00:08:53,234
+almost anything has a price.
+
+126
+00:08:55,484 --> 00:08:58,574
+Chapter 5. A town behind walls.
+
+127
+00:09:04,924 --> 00:09:08,496
+If San Pedro has a property market, it also has a government.
+
+128
+00:09:10,296 --> 00:09:14,703
+Each of the eight sections elects its own leadership every year.
+
+129
+00:09:14,753 --> 00:09:20,624
+A representative. A treasurer. And secretaries for discipline, culture and education,
+
+130
+00:09:20,674 --> 00:09:24,036
+sports and health. Candidates campaign for votes.
+
+131
+00:09:25,836 --> 00:09:29,793
+Not everyone can run. According to one study of the prison,
+
+132
+00:09:29,843 --> 00:09:34,344
+to stand for office you must have spent at least six months inside,
+
+133
+00:09:34,394 --> 00:09:38,690
+own a cell that is not mortgaged, and have no outstanding debts.
+
+134
+00:09:40,490 --> 00:09:44,509
+The committees collect fees, manage budgets, and keep order.
+
+135
+00:09:44,559 --> 00:09:48,645
+Section leaders can send a troublemaker to an isolation cell.
+
+136
+00:09:48,695 --> 00:09:53,663
+And repeat offenders can be transferred, at their request, to Chonchocoro,
+
+137
+00:09:53,713 --> 00:09:58,342
+the maximum security prison outside La Paz, which every inmate fears.
+
+138
+00:10:00,142 --> 00:10:03,887
+And then there is the economy. Prisoners run shops,
+
+139
+00:10:03,937 --> 00:10:09,616
+restaurants and food stalls. Others work as barbers, messengers or craftsmen.
+
+140
+00:10:09,666 --> 00:10:13,262
+Some sell goods made inside to the outside world.
+
+141
+00:10:15,062 --> 00:10:16,401
+According to reports,
+
+142
+00:10:16,451 --> 00:10:22,221
+a Bolivian beverage company once paid for the exclusive right to sell its drinks inside,
+
+143
+00:10:22,271 --> 00:10:26,255
+in exchange for cash and furniture. Rival brands were banned.
+
+144
+00:10:28,055 --> 00:10:30,114
+Football is taken very seriously.
+
+145
+00:10:30,164 --> 00:10:32,734
+The sections play each other in a league.
+
+146
+00:10:32,784 --> 00:10:36,121
+Players are reportedly bought and sold between teams.
+
+147
+00:10:36,171 --> 00:10:41,617
+And betting on the matches was once estimated at up to twenty thousand dollars a year.
+
+148
+00:10:43,417 --> 00:10:48,008
+Every September, on Prisoner's Day, the section leaders organize a party,
+
+149
+00:10:48,058 --> 00:10:50,042
+with a barbecue and a live band.
+
+150
+00:10:51,842 --> 00:10:54,919
+There is a church, and a hospital. But medical care,
+
+151
+00:10:54,969 --> 00:10:56,964
+like everything else, costs money.
+
+152
+00:10:58,764 --> 00:11:01,223
+It sounds almost peaceful. It was not.
+
+153
+00:11:01,273 --> 00:11:06,966
+Reports from the late two thousands described an average of around four deaths a month,
+
+154
+00:11:07,016 --> 00:11:09,013
+from illness and from violence.
+
+155
+00:11:09,063 --> 00:11:13,898
+Men who hurt women or children were punished harshly by the other inmates.
+
+156
+00:11:13,948 --> 00:11:16,011
+Some reportedly did not survive.
+
+157
+00:11:17,811 --> 00:11:21,949
+San Pedro is not unique in this. Across Bolivia's prison system,
+
+158
+00:11:21,999 --> 00:11:26,989
+the official description is that the authorities control the outer perimeter,
+
+159
+00:11:27,039 --> 00:11:30,588
+and that inside, prisoners largely organize themselves.
+
+160
+00:11:30,638 --> 00:11:33,468
+San Pedro is simply the most famous example.
+
+161
+00:11:35,718 --> 00:11:38,448
+Chapter 6. Children inside.
+
+162
+00:11:44,798 --> 00:11:50,342
+There was one more thing that made San Pedro different from almost any prison in the world.
+
+163
+00:11:50,392 --> 00:11:50,895
+Families.
+
+164
+00:11:52,695 --> 00:11:55,844
+In Bolivia, many prisoners' families are poor.
+
+165
+00:11:55,894 --> 00:11:57,861
+When a father goes to prison,
+
+166
+00:11:57,911 --> 00:12:01,268
+his wife and children can lose their only income,
+
+167
+00:12:01,318 --> 00:12:04,120
+and sometimes their home. So for decades,
+
+168
+00:12:04,170 --> 00:12:07,249
+Bolivian prisons allowed families to move in.
+
+169
+00:12:09,049 --> 00:12:12,704
+Wives and children lived inside San Pedro with the prisoners.
+
+170
+00:12:12,754 --> 00:12:13,615
+In the morning,
+
+171
+00:12:13,665 --> 00:12:17,563
+children walked out through the gate to go to school in the city.
+
+172
+00:12:17,613 --> 00:12:20,478
+In the afternoon, they came back. To the prison.
+
+173
+00:12:20,528 --> 00:12:26,006
+Reporting from around two thousand eight described about two hundred children living there.
+
+174
+00:12:27,806 --> 00:12:31,338
+For some families, it was the only way to stay together.
+
+175
+00:12:31,388 --> 00:12:35,241
+For others, it meant children growing up surrounded by drugs,
+
+176
+00:12:35,291 --> 00:12:36,584
+alcohol and violence.
+
+177
+00:12:38,384 --> 00:12:42,345
+In June twenty thirteen, the system became a national scandal.
+
+178
+00:12:42,395 --> 00:12:47,519
+Bolivian officials said a twelve year old girl living in San Pedro was pregnant,
+
+179
+00:12:47,569 --> 00:12:51,465
+after being abused for years by relatives held in the prison.
+
+180
+00:12:51,515 --> 00:12:54,958
+Officials later gave conflicting accounts of the case.
+
+181
+00:12:55,008 --> 00:12:57,286
+But the public outrage was enormous.
+
+182
+00:13:00,286 --> 00:13:06,131
+The government announced it would remove children over the age of six from the country's prisons.
+
+183
+00:13:06,181 --> 00:13:10,567
+Prisoners at San Pedro protested, partly against plans to close the jail.
+
+184
+00:13:10,617 --> 00:13:11,296
+At the time,
+
+185
+00:13:11,346 --> 00:13:17,859
+officials estimated that around fifteen hundred children were living in Bolivian prisons with their parents.
+
+186
+00:13:19,659 --> 00:13:22,434
+Moving them out proved slow and difficult.
+
+187
+00:13:22,484 --> 00:13:25,797
+Many had nowhere else to go. Under Bolivian rules,
+
+188
+00:13:25,847 --> 00:13:30,034
+young children could still stay with a parent. And in practice,
+
+189
+00:13:30,084 --> 00:13:33,800
+according to later reports, some older children did too.
+
+190
+00:13:36,050 --> 00:13:38,560
+Chapter 7. The tourist prison.
+
+191
+00:13:44,910 --> 00:13:46,426
+In nineteen ninety six,
+
+192
+00:13:46,476 --> 00:13:50,851
+a young man named Thomas McFadden was arrested at La Paz airport,
+
+193
+00:13:50,901 --> 00:13:54,731
+carrying about five kilograms of cocaine. He was British,
+
+194
+00:13:54,781 --> 00:13:56,706
+and he was sent to San Pedro.
+
+195
+00:13:56,756 --> 00:13:59,905
+He was sentenced to six years and eight months.
+
+196
+00:14:01,705 --> 00:14:04,446
+McFadden had no money for a good cell.
+
+197
+00:14:04,496 --> 00:14:06,135
+So he found a business.
+
+198
+00:14:06,185 --> 00:14:11,203
+He started giving guided tours of the prison. To foreign backpackers.
+
+199
+00:14:13,003 --> 00:14:16,726
+Word spread. Travelers passed his name to each other.
+
+200
+00:14:16,776 --> 00:14:21,069
+And guidebooks mentioned it. Tourists would come to the gate,
+
+201
+00:14:21,119 --> 00:14:26,124
+pay the guards, and walk inside, where McFadden would show them around.
+
+202
+00:14:26,174 --> 00:14:30,254
+The kitchens. The cells. The sections. The football pitch.
+
+203
+00:14:32,054 --> 00:14:36,809
+According to later reports, a tour could cost around four hundred bolivianos,
+
+204
+00:14:36,859 --> 00:14:41,489
+about fifty seven dollars. Visitors were searched, told not to take photos,
+
+205
+00:14:41,539 --> 00:14:44,235
+and told to leave before six in the evening.
+
+206
+00:14:44,285 --> 00:14:48,292
+Some reportedly stayed overnight, in what inmates called a hotel.
+
+207
+00:14:50,092 --> 00:14:53,113
+And many of the tours came with something extra.
+
+208
+00:14:53,163 --> 00:14:57,912
+According to reporting at the time, cocaine was produced inside the prison,
+
+209
+00:14:57,962 --> 00:15:01,431
+in large laboratories and in crude setups in the cells.
+
+210
+00:15:01,481 --> 00:15:03,926
+And some was sold to visiting tourists.
+
+211
+00:15:05,726 --> 00:15:12,201
+One of the backpackers who heard about McFadden was a young Australian law graduate named Rusty Young.
+
+212
+00:15:12,251 --> 00:15:14,503
+He took the tour. Then he came back.
+
+213
+00:15:14,553 --> 00:15:16,486
+He bribed his way into staying,
+
+214
+00:15:16,536 --> 00:15:21,284
+and lived inside San Pedro for about three months, sharing McFadden's cell.
+
+215
+00:15:23,084 --> 00:15:26,211
+McFadden was released around the year two thousand.
+
+216
+00:15:26,261 --> 00:15:29,950
+Young finished writing his story, and in two thousand three,
+
+217
+00:15:30,000 --> 00:15:33,065
+it was published as a book called Marching Powder.
+
+218
+00:15:33,115 --> 00:15:35,432
+It became an international bestseller.
+
+219
+00:15:37,232 --> 00:15:41,445
+The book made San Pedro famous. Backpackers came looking for it.
+
+220
+00:15:41,495 --> 00:15:42,244
+At its peak,
+
+221
+00:15:42,294 --> 00:15:45,973
+some estimates said there were around fifty tours a day.
+
+222
+00:15:46,023 --> 00:15:50,835
+Hollywood bought the film rights. Actors were announced to play McFadden.
+
+223
+00:15:50,885 --> 00:15:53,033
+The film has still not been made.
+
+224
+00:15:55,833 --> 00:16:00,601
+For the Bolivian government, it was an embarrassment. In two thousand nine,
+
+225
+00:16:00,651 --> 00:16:04,391
+a tourist's video from inside the prison was posted online,
+
+226
+00:16:04,441 --> 00:16:07,218
+and Bolivian television picked up the story.
+
+227
+00:16:07,268 --> 00:16:10,109
+The authorities moved to shut the tours down.
+
+228
+00:16:11,909 --> 00:16:16,996
+Bolivian newspapers reported that the police managed to reduce prison tourism,
+
+229
+00:16:17,046 --> 00:16:20,421
+but not to stop it completely. For years afterwards,
+
+230
+00:16:20,471 --> 00:16:23,253
+travelers still told stories of getting in.
+
+231
+00:16:25,053 --> 00:16:28,568
+Marching Powder is still sold in bookshops around the world.
+
+232
+00:16:28,618 --> 00:16:29,578
+For many readers,
+
+233
+00:16:29,628 --> 00:16:33,855
+it is the first time they hear that a prison like this can exist at all.
+
+234
+00:16:36,105 --> 00:16:38,882
+Chapter 8. The cells are not for sale.
+
+235
+00:16:45,232 --> 00:16:49,477
+The tours faded. The children were moved out, at least officially.
+
+236
+00:16:49,527 --> 00:16:51,624
+But the property market survived.
+
+237
+00:16:53,424 --> 00:16:58,250
+In two thousand nineteen, a former mayor of El Alto, Edgar Patana,
+
+238
+00:16:58,300 --> 00:17:02,165
+held in San Pedro, was transferred to another prison.
+
+239
+00:17:02,215 --> 00:17:07,558
+According to Bolivian press reports, he had been accused of deals inside,
+
+240
+00:17:07,608 --> 00:17:11,178
+including promoting cell rentals and renovations.
+
+241
+00:17:12,978 --> 00:17:17,040
+And the problem was not only San Pedro. In other Bolivian prisons,
+
+242
+00:17:17,090 --> 00:17:21,837
+the national ombudsman found that many young inmates had to pay an entry fee,
+
+243
+00:17:21,887 --> 00:17:23,830
+known as the right to the floor,
+
+244
+00:17:23,880 --> 00:17:27,132
+of between seven hundred and two thousand bolivianos.
+
+245
+00:17:27,182 --> 00:17:30,434
+Those who could not pay were sent to the worst areas.
+
+246
+00:17:32,234 --> 00:17:35,666
+The country's largest prison, Palmasola, in Santa Cruz,
+
+247
+00:17:35,716 --> 00:17:39,085
+works in a similar way, and has been far more violent.
+
+248
+00:17:39,135 --> 00:17:40,731
+In August twenty thirteen,
+
+249
+00:17:40,781 --> 00:17:45,668
+a battle between rival groups of inmates there left around thirty people dead,
+
+250
+00:17:45,718 --> 00:17:46,934
+many of them burned.
+
+251
+00:17:48,734 --> 00:17:50,855
+And the violence has not gone away.
+
+252
+00:17:50,905 --> 00:17:53,769
+In the first seven months of twenty twenty six,
+
+253
+00:17:53,819 --> 00:17:58,606
+Bolivia's ombudsman counted seventeen violent deaths in the country's prisons.
+
+254
+00:17:58,656 --> 00:18:01,210
+More than in the whole of the year before.
+
+255
+00:18:03,010 --> 00:18:05,764
+Meanwhile, Bolivia's prisons kept filling up.
+
+256
+00:18:05,814 --> 00:18:07,821
+By the end of twenty twenty five,
+
+257
+00:18:07,871 --> 00:18:10,749
+they held more than thirty two thousand people.
+
+258
+00:18:10,799 --> 00:18:12,930
+At one point in twenty twenty five,
+
+259
+00:18:12,980 --> 00:18:17,541
+the system was reported to be more than one hundred percent over capacity.
+
+260
+00:18:19,341 --> 00:18:24,013
+On February twenty sixth, twenty twenty six, Colonel Daniel Merida,
+
+261
+00:18:24,063 --> 00:18:26,762
+Bolivia's national director of prisons,
+
+262
+00:18:26,812 --> 00:18:30,285
+gave an interview to the Bolivian news agency ANF.
+
+263
+00:18:30,335 --> 00:18:31,836
+His message was blunt.
+
+264
+00:18:33,636 --> 00:18:38,074
+Prisoners' investments in building or improving their cells, he said,
+
+265
+00:18:38,124 --> 00:18:40,286
+do not create any property rights.
+
+266
+00:18:40,336 --> 00:18:43,343
+The land and the buildings belong to the state.
+
+267
+00:18:45,143 --> 00:18:48,144
+Any improvement or construction they make, he said,
+
+268
+00:18:48,194 --> 00:18:50,956
+is at their own risk, and gives them no rights.
+
+269
+00:18:53,956 --> 00:18:59,181
+He said the state could reorganize the spaces whenever it considered it necessary,
+
+270
+00:18:59,231 --> 00:19:01,755
+including moving inmates to other wings.
+
+271
+00:19:01,805 --> 00:19:04,199
+He said strict orders had been issued,
+
+272
+00:19:04,249 --> 00:19:06,515
+banning charges for access to cells.
+
+273
+00:19:06,565 --> 00:19:12,562
+And that cameras would help identify prisoners and police officers involved in irregularities.
+
+274
+00:19:14,362 --> 00:19:16,767
+In other words, after more than a century,
+
+275
+00:19:16,817 --> 00:19:19,514
+the state was trying to take back the building.
+
+276
+00:19:22,514 --> 00:19:26,439
+Whether that is possible is another question. For generations,
+
+277
+00:19:26,489 --> 00:19:30,286
+prisoners in San Pedro have paid real money for their cells.
+
+278
+00:19:30,336 --> 00:19:34,133
+Some have spent their savings. Some have borrowed. For them,
+
+279
+00:19:34,183 --> 00:19:36,441
+a cell is not just a place to sleep.
+
+280
+00:19:36,491 --> 00:19:38,941
+It is the most valuable thing they own.
+
+281
+00:19:41,191 --> 00:19:44,188
+Chapter 9. Why it still exists.
+
+282
+00:19:50,538 --> 00:19:53,542
+So why has San Pedro not simply been closed?
+
+283
+00:19:55,342 --> 00:19:58,533
+There have been plans. In the mid two thousands,
+
+284
+00:19:58,583 --> 00:20:01,910
+during the presidency of Eduardo Rodriguez Veltze,
+
+285
+00:20:01,960 --> 00:20:06,300
+a project was prepared to move the prison out of the city center,
+
+286
+00:20:06,350 --> 00:20:09,879
+to a site in the south of La Paz. In twenty thirteen,
+
+287
+00:20:09,929 --> 00:20:14,607
+after the child abuse scandal, closure was discussed again. Each time,
+
+288
+00:20:14,657 --> 00:20:15,822
+the prison stayed.
+
+289
+00:20:17,622 --> 00:20:19,456
+Part of the reason is simple.
+
+290
+00:20:19,506 --> 00:20:22,184
+Bolivia does not have enough prison space.
+
+291
+00:20:22,234 --> 00:20:27,444
+Closing San Pedro would mean finding somewhere else for well over a thousand men,
+
+292
+00:20:27,494 --> 00:20:29,588
+in a system that is already full.
+
+293
+00:20:31,388 --> 00:20:35,019
+Part of the reason is that the system, in a strange way,
+
+294
+00:20:35,069 --> 00:20:38,964
+works. A state with little money for prisons has, in effect,
+
+295
+00:20:39,014 --> 00:20:42,908
+let the prisoners pay for their own housing, their own food,
+
+296
+00:20:42,958 --> 00:20:45,867
+their own order. The guards control the gate.
+
+297
+00:20:45,917 --> 00:20:47,445
+The inmates do the rest.
+
+298
+00:20:49,245 --> 00:20:52,864
+And that is exactly what critics say is wrong with it.
+
+299
+00:20:52,914 --> 00:20:53,747
+In San Pedro,
+
+300
+00:20:53,797 --> 00:20:57,144
+the price of justice is not the same for everyone.
+
+301
+00:20:57,194 --> 00:21:00,065
+A man's safety, his space, even his health,
+
+302
+00:21:00,115 --> 00:21:03,327
+depend on how much money he has. Poor prisoners,
+
+303
+00:21:03,377 --> 00:21:06,927
+many of them never convicted, end up paying the most.
+
+304
+00:21:08,727 --> 00:21:12,061
+Today, the building still stands on Plaza San Pedro.
+
+305
+00:21:12,111 --> 00:21:14,403
+Tourists sit on the benches outside.
+
+306
+00:21:14,453 --> 00:21:16,941
+Some of them have read Marching Powder.
+
+307
+00:21:16,991 --> 00:21:20,585
+They look at the white walls, and the heavy wooden door.
+
+308
+00:21:20,635 --> 00:21:23,188
+And they wonder what is going on inside.
+
+309
+00:21:24,988 --> 00:21:29,233
+Somewhere behind those walls, someone is probably selling a cell right now.
+
+310
+00:21:32,533 --> 00:21:35,638
+So what do you think? Is San Pedro a disgrace,
+
+311
+00:21:35,688 --> 00:21:38,587
+or a practical solution for a poor country?
+
+312
+00:21:38,637 --> 00:21:40,233
+Tell us in the comments.
+
+313
+00:21:40,283 --> 00:21:46,200
+And if you want to see what happens when a prison economy turns into a criminal empire,
+
+314
+00:21:46,250 --> 00:21:49,218
+watch our story about Tocoron, in Venezuela.
