@@ -14,7 +14,7 @@ ENG = os.path.dirname(os.path.abspath(__file__))
 def hx(s):
     s = s.lstrip('#'); return tuple(int(s[i:i + 2], 16) / 255 for i in (0, 2, 4))
 BG, AMB, RED, WHITE, GREY, PAPER, INK = hx('141416'), hx('d9a441'), hx('b3302a'), hx('f2f0ea'), hx('8a8a8a'), hx('e9e4d8'), hx('1d1b18')
-LAND, EDGE, SEA, HL = hx('2a2c30'), hx('45484e'), hx('101418'), hx('8e2a24')
+LAND, EDGE, SEA, HL = hx('2a2c30'), hx('45484e'), hx('101418'), hx('6a2622')
 
 def clamp(x, a=0.0, b=1.0): return max(a, min(b, x))
 def seg(t, a, b): return clamp((t - a) / (b - a)) if b > a else float(t >= a)
@@ -78,6 +78,7 @@ def photo(name, blur=0):
     key = (name, blur)
     if key in _IMG: return _IMG[key]
     p = os.path.join(PROJ, 'img', name + '.jpg')
+    if not os.path.exists(p): p = os.path.join(PROJ, 'img', 'dark.jpg')
     im = Image.open(p).convert('RGB')
     if max(im.size) > 2600: im.thumbnail((2600, 2600))
     g = ImageOps.grayscale(im)
@@ -107,7 +108,7 @@ def u_of(t, d): return clamp(t / max(d, 0.1))
 
 def bgphoto(ctx, p, t, d, dim=0.72, blur=0):
     src(ctx, BG); ctx.paint()
-    if p.get('bgimg') and p['bgimg'] != 'dark':
+    if p.get('bgimg') and p['bgimg'] != 'dark' and os.path.exists(os.path.join(PROJ, 'img', p['bgimg'] + '.jpg')):
         cover(ctx, photo(p['bgimg'], blur), lerp(1.05, 1.13, u_of(t, d)))
         ctx.rectangle(0, 0, W, H); src(ctx, BG, dim); ctx.fill()
 
@@ -140,6 +141,8 @@ AUTOTAG = {}
 
 def v_photo(ctx, t, d, p):
     src(ctx, BG); ctx.paint()
+    if p['img'] == 'dark' or not os.path.exists(os.path.join(PROJ, 'img', p['img'] + '.jpg')):
+        grid_bg(ctx, t); return
     u = u_of(t, d); z0, z1 = p.get('z0', 1.0), p.get('z1', 1.12)
     f0 = p.get('f0', (0.5, 0.5)); f1 = p.get('f1', f0)
     cover(ctx, photo(p['img']), lerp(z0, z1, ease(u)), lerp(f0[0], f1[0], u), lerp(f0[1], f1[1], u))
@@ -206,7 +209,7 @@ def torn_panel(ctx, x0, k):
 
 def v_list(ctx, t, d, p):
     src(ctx, BG); ctx.paint()
-    if p.get('img') and p['img'] != 'dark':
+    if p.get('img') and p['img'] != 'dark' and os.path.exists(os.path.join(PROJ, 'img', p['img'] + '.jpg')):
         cover(ctx, photo(p['img']), lerp(1.05, 1.12, u_of(t, d)), box=(0, 0, W, H))
         ctx.rectangle(0, 0, W, H); src(ctx, BG, 0.25); ctx.fill()
     else:
@@ -291,7 +294,7 @@ class View:
         lo0, lo1, la0, la1 = box; cx, cy = (lo0 + lo1) / 2, (la0 + la1) / 2
         hw, hh = (lo1 - lo0) / 2 / zoom, (la1 - la0) / 2 / zoom
         self.x0, self.y1 = merc(cx - hw, cy + hh); self.x1, self.y0 = merc(cx + hw, cy - hh)
-        self.s = max(W / (self.x1 - self.x0), H / (self.y1 - self.y0))
+        self.s = min(W / (self.x1 - self.x0), H / (self.y1 - self.y0))
         self.ox = (W - (self.x1 - self.x0) * self.s) / 2; self.oy = (H - (self.y1 - self.y0) * self.s) / 2
         self.east = lo0 > 0
     def p(self, lo, la):
@@ -398,7 +401,7 @@ def build():
         roll = SEGROLL.get(key[0], ROLL)
         while slot / sum(v[0] for v in vis) > cap and kind != 'chapter':
             im = roll[rc % len(roll)]; rc += 1
-            vis.append((1, 'plain', dict(img=im, z0=1.02, z1=1.12)))
+            vis.append(im if isinstance(im, tuple) else (1, 'plain', dict(img=im, z0=1.02, z1=1.12)))
         tw_ = sum(v[0] for v in vis); t0 = tcur if i else 0.0
         for w, k, pp in vis:
             ln = slot * w / tw_ + (LEAD if (i == 0 and t0 == 0.0) else 0)
