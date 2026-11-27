@@ -373,6 +373,11 @@ def v_fugitive(ctx, t, d, p):
     if p.get('stamp'):
         stamp(ctx, p['stamp'], 1420, 420, 92, seg(t, p.get('stamp_t', 1.6), p.get('stamp_t', 1.6) + 0.35), rot=-0.14, col=WHITE if p['stamp'] == 'DEAD' else RED)
 
+def _scene_wrap(fn):
+    def v(ctx, t, d, p):
+        fn(ctx, t, d, p)
+    return v
+
 KINDS = dict(photo=v_photo, plain=v_photo, quote=v_quote, dial=v_dial, counter=v_counter, list=v_list, doc=v_doc,
              title=v_title, chapter=v_chapter, geo=v_geo, hboard=v_hboard, fugitive=v_fugitive)
 
@@ -382,6 +387,10 @@ def load(name):
     m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m); return m
 
 CFG = load('plan'); PLAN = CFG.PLAN
+if os.path.exists(os.path.join(PROJ, 'scenes.py')):
+    _SC = load('scenes')
+    for _n in dir(_SC):
+        if _n.startswith('s_'): KINDS[_n[2:]] = _SC.__dict__[_n]
 AUTOTAG.update(getattr(CFG, 'AUTOTAG', {})); VIEWS.update(getattr(CFG, 'VIEWS', {})); CITIES.update(getattr(CFG, 'CITIES', {}))
 EXTRA = getattr(CFG, 'EXTRA', {}); SEGROLL = getattr(CFG, 'SEGROLL', {}); ROLL = getattr(CFG, 'ROLL', ['dark'])
 LEAD, GAP, CH_EXTRA, TAIL = 0.6, 1.3, 3.5, 3.5
@@ -397,11 +406,11 @@ def build():
         if i == len(LINES) - 1: slot += TAIL
         vis = list(PLAN.get(key, []))
         if not vis: vis = [(1, 'plain', dict(img=ROLL[0]))]
-        cap = 6.0 if key.startswith('o') else 8.5
+        cap = getattr(CFG, 'CAP', (6.0, 8.5))[0 if key.startswith('o') else 1]
         roll = SEGROLL.get(key[0], ROLL)
         while slot / sum(v[0] for v in vis) > cap and kind != 'chapter':
             im = roll[rc % len(roll)]; rc += 1
-            vis.append(im if isinstance(im, tuple) else (1, 'plain', dict(img=im, z0=1.02, z1=1.12)))
+            vis.append((im[0], im[1], dict(im[2], v=rc)) if isinstance(im, tuple) else (1, 'plain', dict(img=im, z0=1.02, z1=1.12)))
         tw_ = sum(v[0] for v in vis); t0 = tcur if i else 0.0
         for w, k, pp in vis:
             ln = slot * w / tw_ + (LEAD if (i == 0 and t0 == 0.0) else 0)
