@@ -394,7 +394,7 @@ def v_clip(ctx, t, d, p):
     arr = clip_frames(p['clip'], p.get('ss', 0), d)
     if arr is None or not len(arr): grid_bg(ctx, t); return
     i = min(len(arr) - 1, int(t * 30 * p.get('speed', 1.0)))
-    fr = np.ascontiguousarray(arr[i]); fr[:, :, 3] = 255
+    fr = np.array(arr[i]); fr[:, :, 3] = 255
     sf = cairo.ImageSurface.create_for_data(bytearray(fr.tobytes()), cairo.FORMAT_ARGB32, 960, 540, 960 * 4)
     z = lerp(p.get('z0', 1.0), p.get('z1', 1.06), u_of(t, d))
     ctx.save(); ctx.translate(W / 2, H / 2); ctx.scale(2 * z, 2 * z); ctx.translate(-480, -270)
