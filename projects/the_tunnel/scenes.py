@@ -301,3 +301,22 @@ def s_court(ctx, t, d, p):
     label3d(ctx, cam, (8.5, 4, 2.2), 'JURY', col=CYAN, size=40, a=seg(t, 0.6, 1.2))
     label3d(ctx, cam, (-3, 2.4, 1.8), p.get('lab', 'THE DEFENDANT'), col=RED, size=40, a=seg(t, 1.0, 1.6))
     finish(ctx, t, p.get('cap'), p.get('sub'))
+
+def s_border(ctx, t, d, p):
+    """House in Mexico -> tunnel under the border fence -> warehouse in the US."""
+    background(ctx)
+    da, sc = vary(p)
+    k = ease(u(t, d))
+    cam = Cam(np.array([lerp(-30, 10, k) + da, -115 * sc, 55]), np.array([lerp(0, 15, k), 0, -4]), 50)
+    ground_grid(ctx, cam, size=120, step=6, a=0.12)
+    fence = Lines([((0, y, 0), (0, y, 5)) for y in range(-60, 61, 3)] + [((0, -60, 5), (0, 60, 5)), ((0, -60, 2.5), (0, 60, 2.5))], col=AMBER, edge=0.6)
+    house = box(-40, -6, 0, 12, 10, 5, col=RED, alpha=0.25)
+    ware = box(40, -9, 0, 20, 16, 8, col=CYAN, alpha=0.2)
+    n = max(2, int(30 * seg(t, 0.6, d * 0.75)))
+    path = [(-34 + 80 * i / 29, -1 + 2 * math.sin(i / 5), -8) for i in range(30)]
+    tun = tube([(-34, -1, 0)] + path[:n], r=0.9, seg=8, col=RED, alpha=0.15, edge=0.8)
+    render(ctx, cam, [house, ware, tun]); render_lines(ctx, cam, [fence])
+    label3d(ctx, cam, (-34, -1, 5), p.get('la', 'MEXICO'), col=RED, size=40, a=seg(t, 0.3, 0.9))
+    label3d(ctx, cam, (50, -1, 8), p.get('lb', 'UNITED STATES'), col=CYAN, size=40, a=seg(t, 0.5, 1.1))
+    label3d(ctx, cam, (0, 40, 5), 'BORDER', col=AMBER, size=36, a=seg(t, 0.2, 0.8))
+    finish(ctx, t, p.get('cap'), p.get('sub'))

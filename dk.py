@@ -373,12 +373,40 @@ def v_fugitive(ctx, t, d, p):
     if p.get('stamp'):
         stamp(ctx, p['stamp'], 1420, 420, 92, seg(t, p.get('stamp_t', 1.6), p.get('stamp_t', 1.6) + 0.35), rot=-0.14, col=WHITE if p['stamp'] == 'DEAD' else RED)
 
+
+# ---------------------------------------------------------------- video clips
+_CLIPS = {}
+def clip_frames(name, ss, dur):
+    import subprocess
+    key = (name, ss)
+    if key in _CLIPS: return _CLIPS[key]
+    if len(_CLIPS) > 2: _CLIPS.clear()
+    path = os.path.join(PROJ, 'clips', name)
+    vf = 'scale=960:540:force_original_aspect_ratio=increase,crop=960:540,fps=30,hue=s=0.25,eq=contrast=1.08:brightness=-0.02,format=bgra'
+    raw = subprocess.run(['ffmpeg', '-v', 'error', '-ss', str(ss), '-t', str(dur + 0.6), '-i', path, '-vf', vf, '-f', 'rawvideo', '-'], capture_output=True).stdout
+    n = len(raw) // (960 * 540 * 4)
+    arr = np.frombuffer(raw[:n * 960 * 540 * 4], np.uint8).reshape(n, 540, 960, 4) if n else None
+    _CLIPS[key] = arr
+    return arr
+
+def v_clip(ctx, t, d, p):
+    src(ctx, BG); ctx.paint()
+    arr = clip_frames(p['clip'], p.get('ss', 0), d)
+    if arr is None or not len(arr): grid_bg(ctx, t); return
+    i = min(len(arr) - 1, int(t * 30 * p.get('speed', 1.0)))
+    fr = np.ascontiguousarray(arr[i]); fr[:, :, 3] = 255
+    sf = cairo.ImageSurface.create_for_data(bytearray(fr.tobytes()), cairo.FORMAT_ARGB32, 960, 540, 960 * 4)
+    z = lerp(p.get('z0', 1.0), p.get('z1', 1.06), u_of(t, d))
+    ctx.save(); ctx.translate(W / 2, H / 2); ctx.scale(2 * z, 2 * z); ctx.translate(-480, -270)
+    ctx.set_source_surface(sf, 0, 0); ctx.get_source().set_filter(cairo.FILTER_GOOD); ctx.paint(); ctx.restore()
+    if p.get('tag'): tag(ctx, p['tag'], 60, 50, 22, ease(seg(t, 0.3, 0.9)))
+
 def _scene_wrap(fn):
     def v(ctx, t, d, p):
         fn(ctx, t, d, p)
     return v
 
-KINDS = dict(photo=v_photo, plain=v_photo, quote=v_quote, dial=v_dial, counter=v_counter, list=v_list, doc=v_doc,
+KINDS = dict(clip=v_clip, photo=v_photo, plain=v_photo, quote=v_quote, dial=v_dial, counter=v_counter, list=v_list, doc=v_doc,
              title=v_title, chapter=v_chapter, geo=v_geo, hboard=v_hboard, fugitive=v_fugitive)
 
 # ---------------------------------------------------------------- timeline
@@ -430,7 +458,8 @@ def build():
     return shots, subs, starts, tcur
 
 SHOTS, SUBS, STARTS, TOTAL = build()
-XF = 0.35
+XF = 0.4
+TRANS = getattr(CFG, 'TRANS', ['fade', 'push', 'fade', 'zoom', 'fade', 'flash'])
 
 def sub_at(t):
     for a, b, c in SUBS:
@@ -461,7 +490,21 @@ def frame(t, surf):
         prev = SHOTS[idx - 1]
         tmp = cairo.ImageSurface(cairo.FORMAT_RGB24, W, H); c2 = cairo.Context(tmp)
         shot_frame(c2, prev, min(t, prev['t1'] - 1e-3))
-        ctx.set_source_surface(tmp, 0, 0); ctx.paint_with_alpha(1 - ease((t - s['t0']) / XF))
+        k = ease((t - s['t0']) / XF)
+        tr = TRANS[idx % len(TRANS)] if s['kind'] in ('photo', 'plain', 'clip') and prev['kind'] in ('photo', 'plain', 'clip') else 'fade'
+        if tr == 'push':
+            cur = cairo.ImageSurface(cairo.FORMAT_RGB24, W, H); c3 = cairo.Context(cur); c3.set_source_surface(surf, 0, 0); c3.paint()
+            src(ctx, BG); ctx.paint()
+            ctx.set_source_surface(tmp, -W * k, 0); ctx.paint()
+            ctx.set_source_surface(cur, W * (1 - k), 0); ctx.paint()
+        elif tr == 'flash':
+            ctx.set_source_surface(tmp, 0, 0); ctx.paint_with_alpha(1 - k)
+            ctx.rectangle(0, 0, W, H); src(ctx, (1, 1, 1), 0.55 * math.sin(math.pi * k)); ctx.fill()
+        elif tr == 'zoom':
+            ctx.save(); ctx.translate(W / 2, H / 2); zz = 1 + 0.12 * k; ctx.scale(zz, zz); ctx.translate(-W / 2, -H / 2)
+            ctx.set_source_surface(tmp, 0, 0); ctx.paint_with_alpha(1 - k); ctx.restore()
+        else:
+            ctx.set_source_surface(tmp, 0, 0); ctx.paint_with_alpha(1 - k)
     grain(ctx, t)
     sb = sub_at(t)
     if sb: draw_sub(ctx, sb)
@@ -500,5 +543,34 @@ if __name__ == '__main__':
         for (key, kind, text), st in zip(LINES, STARTS):
             if kind == 'chapter':
                 m, s = divmod(int(st), 60); print(f'{m:02d}:{s:02d} {text}')
+    elif c == 'audit':
+        S3K = set(getattr(_SC, '__dict__', {}).keys()) if os.path.exists(os.path.join(PROJ, 'scenes.py')) else set()
+        def ident(s):
+            p = s['p']; k = s['kind']
+            if k in ('photo', 'plain'): return 'img:' + str(p.get('img'))
+            if k == 'clip': return 'clip:%s@%d' % (p.get('clip'), int(float(p.get('ss', 0)) // 8))
+            if k == 'geo': return 'geo:%s:%s' % (p.get('view'), p.get('main'))
+            if 's_' + k in S3K: return '3d:%s:%s:%s' % (k, p.get('phase', ''), p.get('cap', ''))
+            return 'gfx:%s:%s' % (k, str(p)[:60])
+        last = {}; reps = []; uniq = set(); d3 = 0; clipt = 0; photot = 0
+        for s in SHOTS:
+            i = ident(s); d = s['t1'] - s['t0']
+            if i.startswith(('img:', 'clip:')) and i != 'img:dark':
+                if i in last and s['t0'] - last[i] < 60: reps.append((round(s['t0'], 1), s['key'], i, round(s['t0'] - last[i], 1)))
+                last[i] = s['t1']
+            uniq.add(i)
+            if i.startswith('3d:'): d3 += d
+            if i.startswith('clip:'): clipt += d
+            if i.startswith('img:'): photot += d
+        first = [ident(s) for s in SHOTS if s['t0'] < 30]
+        real = [x for x in uniq if x.startswith(('img:', 'clip:')) and x != 'img:dark']
+        ds = [s['t1'] - s['t0'] for s in SHOTS]
+        print('total %.1f min | shots %d | avg shot %.1fs | max %.1fs' % (TOTAL / 60, len(SHOTS), sum(ds) / len(ds), max(ds)))
+        print('unique visuals %d (real photo/clip %d) | 3D %.0f%% | clips %.0f%% | photos %.0f%%' % (len(uniq), len(real), 100 * d3 / TOTAL, 100 * clipt / TOTAL, 100 * photot / TOTAL))
+        print('first 30s: %d shots, %d distinct, %d real' % (len(first), len(set(first)), len([x for x in set(first) if x.startswith(('img:', 'clip:'))])))
+        print('repeats <60s:', len(reps))
+        for r in reps: print('  ', r)
+        long = [(round(s['t0'], 1), s['key'], s['kind'], round(s['t1'] - s['t0'], 1)) for s in SHOTS if s['t1'] - s['t0'] > 6.5]
+        print('shots > 6.5s:', len(long), long[:15])
     elif c == 'vo':
-        print(json.dumps(dict(starts=STARTS, total=TOTAL)))
+        print(json.dumps(dict(starts=STARTS, total=TOTAL, keys=[l[0] for l in LINES], music=getattr(CFG, 'MUSIC', []))))

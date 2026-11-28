@@ -21,7 +21,8 @@ for f in ${NAME}_youtube.txt ${NAME}_en.srt $(ls $S/$NAME.mp4.part* | xargs -n1 
   PARENT=$C
 done
 VT=$(git rev-parse $PARENT:$NAME)
-VC=$(git commit-tree $VT -m "Video: $NAME" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" -m "Claude-Session: https://claude.ai/code/session_01SNgKBNtipmcgFHHPuePVK6")
+OLD=$(git ls-remote origin refs/heads/video-$NAME | cut -f1); [ -n "$OLD" ] && git fetch -q origin video-$NAME && PP="-p $OLD" || PP=""
+VC=$(git commit-tree $VT $PP -m "Video: $NAME" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" -m "Claude-Session: https://claude.ai/code/session_01SNgKBNtipmcgFHHPuePVK6")
 for i in 1 2 3 4; do git push -q origin $VC:refs/heads/video-$NAME 2>&1 | grep -v acknowledg || true; git ls-remote origin refs/heads/video-$NAME | grep -q $VC && break; sleep $((i*4)); done
 git ls-remote origin refs/heads/videos refs/heads/video-$NAME
 cd $S && cat $NAME.mp4.part* | md5sum && md5sum $P/$NAME.mp4

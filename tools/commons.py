@@ -27,11 +27,14 @@ elif c == 'get':
         r = api(action='query', titles=title, prop='imageinfo', iiprop='url', iiurlwidth=2200)
         ii = list(r['query']['pages'].values())[0]['imageinfo'][0]
         url = ii.get('thumburl') or ii['url']
+        data = None
         for a in range(6):
             try:
                 data = urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60).read(); break
             except Exception as e:
                 time.sleep(20 * (a + 1))
+        if not data:
+            print(name, 'FAILED'); continue
         open(out + '.tmp', 'wb').write(data)
         os.system(f'ffmpeg -v error -y -i "{out}.tmp" -q:v 3 "{out}" && rm -f "{out}.tmp"')
         print(name, os.path.getsize(out)); time.sleep(4)
